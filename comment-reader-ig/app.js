@@ -23,10 +23,10 @@ async function start() {
 
     const browser = await puppeteer.launch()
     const page = await browser.newPage()
-    await page.goto('https://www.instagram.com/p/CCkF5CxMyXA/')
+    await page.goto(/*url-of-the-page-that-you-want-to-read*/)
 
     await loadMore(page, '.dCJp8')
-    const arrobas = await getComments(page, '.C4VMK h3')
+    const arrobas = await getComments(page, '.C4VMK h3') // the HTML path
     const counted = count(arrobas)
     const sorted = sort(counted)
     sorted.forEach(arroba => {console.log(arroba)})
